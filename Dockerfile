@@ -1,5 +1,4 @@
 FROM debian 
-VOLUME /unturned
 RUN dpkg --add-architecture i386 \
 && apt -y update \
 && apt -y upgrade \
@@ -7,7 +6,9 @@ RUN dpkg --add-architecture i386 \
 && apt-get -y install  libstdc++6 libgcc1 libcurl4-gnutls-dev \
 && apt -y install wget \
 && mkdir /steamcmd \
+&& mkdir /unturned \
 && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -O /steamcmd/steamcmd_linux.tar.gz \
 && tar -xzvf /steamcmd/steamcmd_linux.tar.gz -C /steamcmd \
 && /steamcmd/steamcmd.sh +force_install_dir /unturned +login anonymous +app_update 1110390 +quit 
+VOLUME /unturned
 WORKDIR /unturned
