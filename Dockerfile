@@ -9,5 +9,5 @@ RUN dpkg --add-architecture i386 \
 && mkdir /steamcmd \
 && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -O /steamcmd/steamcmd_linux.tar.gz \
 && tar -xzvf /steamcmd/steamcmd_linux.tar.gz -C /steamcmd \
-&& /steamcmd/steamcmd.sh +force_install_dir /dts +login anonymous +app_update 1110390 +quit 
+&& /steamcmd/steamcmd.sh +force_install_dir /unturned +login anonymous +app_update 1110390 +quit 
 WORKDIR /unturned
